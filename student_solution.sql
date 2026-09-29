@@ -1,20 +1,13 @@
-CREATE DATABASE CollegeDB;
-
-USE CollegeDB;
-
 CREATE TABLE Department (
     DepartmentID INT PRIMARY KEY,
     DepartmentName VARCHAR(50)
 );
 
 INSERT INTO Department (DepartmentID, DepartmentName)
-VALUES (101, 'Computer Science');
-
-INSERT INTO Department (DepartmentID, DepartmentName)
-VALUES (102, 'Mathematics');
-
-INSERT INTO Department (DepartmentID, DepartmentName)
-VALUES (103, 'Physics');
+VALUES
+(101, 'Computer Science'),
+(102, 'Mathematics'),
+(103, 'Physics');
 
 CREATE TABLE Student (
     StudentID INT PRIMARY KEY,
@@ -23,20 +16,17 @@ CREATE TABLE Student (
 );
 
 INSERT INTO Student (StudentID, StudentName, DepartmentID)
-VALUES (1001, 'Arun', 101);
-
-INSERT INTO Student (StudentID, StudentName, DepartmentID)
-VALUES (1002, 'Divya', 102);
-
-INSERT INTO Student (StudentID, StudentName, DepartmentID)
-VALUES (1003, 'Karthik', 101);
-
-INSERT INTO Student (StudentID, StudentName, DepartmentID)
-VALUES (1004, 'Nisha', 103);
+VALUES
+(1001, 'Arun', 101),
+(1002, 'Divya', 102),
+(1003, 'Karthik', 101),
+(1004, 'Nisha', 103);
 
 SELECT Student.StudentName, Department.DepartmentName
 FROM Student
 INNER JOIN Department
 ON Student.DepartmentID = Department.DepartmentID;
+
+This lets test.sh handle the fresh CollegeDB database while your file creates only the required tables and performs the join.
 
 
