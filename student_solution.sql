@@ -40,7 +40,3 @@ INNER JOIN Department
 ON Student.DepartmentID = Department.DepartmentID;
 
 
-
-
-
-
