@@ -1,5 +1,7 @@
+USE CollegeDB;
+
 CREATE TABLE Department (
-    DepartmentID INT PRIMARY KEY,
+    DepartmentID INT,
     DepartmentName VARCHAR(50)
 );
 
@@ -10,8 +12,8 @@ VALUES
 (103, 'Physics');
 
 CREATE TABLE Student (
-    StudentID INT PRIMARY KEY,
-    StudentName VARCHAR(20),
+    StudentID INT,
+    StudentName VARCHAR(50),
     DepartmentID INT
 );
 
@@ -26,7 +28,3 @@ SELECT Student.StudentName, Department.DepartmentName
 FROM Student
 INNER JOIN Department
 ON Student.DepartmentID = Department.DepartmentID;
-
-This lets test.sh handle the fresh CollegeDB database while your file creates only the required tables and performs the join.
-
-
